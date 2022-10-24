@@ -25,6 +25,7 @@ sudo make uninstall
 ```
 
 ## License
+[GPLv3](https://choosealicense.com/licenses/gpl-3.0/)
 
 ## Requirements
 * [ImageMagick](https://imagemagick.org/index.php)
