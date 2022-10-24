@@ -29,3 +29,4 @@ sudo make uninstall
 ## Requirements
 * [ImageMagick](https://imagemagick.org/index.php)
 * [ExifTool](https://exiftool.org/)
+* The picture must have an orientation tag in the metadata

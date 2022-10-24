@@ -16,7 +16,7 @@ fi
 for file in $PICTURES
 do
   #Check the orientation of the picture
-	[ "$(exiftool $file | grep 'Exif Image Height' | awk -F ":" '{print $2}')" -lt "$(exiftool $file | grep 'Exif Image Width' | awk -F ":" '{print $2}')" ] &&
+	[ "$(exiftool $file | grep '^Image Height' | awk -F ":" '{print $2}')" -lt "$(exiftool $file | grep '^Image Width' | awk -F ":" '{print $2}')" ] &&
 		if [ "$(exiftool $file | grep Orientation | awk -F "[()]" '{print $2}')" == "normal" ]
 		then
 		  #If the picture is oriented vertically to the right, rotate it 90 degrees to the left
