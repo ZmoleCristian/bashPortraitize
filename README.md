@@ -1,10 +1,10 @@
 # bashPortraitize
-A bash script that helps you rotate images to portrait in bulk 
+A bash script that helps you rotate images to portrait in bulk based on exifdata
 
 ![](logo.png)
 
 
-## Installation
+## Install
 ### The installer installs all requirements and the script itself
 1. Clone the repository
 2. sudo make install
@@ -19,7 +19,7 @@ sudo make install
 Usage: portraitize [working directory]
 ```
 
-## Uninstallation
+## Uninstall
 ```
 sudo make uninstall
 ```
@@ -30,4 +30,4 @@ sudo make uninstall
 ## Requirements
 * [ImageMagick](https://imagemagick.org/index.php)
 * [ExifTool](https://exiftool.org/)
-* The picture must have an orientation tag in the metadata
+* The picture must have valid exifdata
