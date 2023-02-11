@@ -9,7 +9,7 @@ test: portraitize.sh
 	shellcheck -s sh portraitize.sh
 
 clean:
-	rm -f grb
+	rm -f portraitize
 
 install: portraitize
 	#run installReq.sh to install dependencies
