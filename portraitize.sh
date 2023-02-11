@@ -2,7 +2,6 @@
 #set first argument as working directory variable
 WORKING_DIR=$1
 #get all pictures in working directory
-PICTURES=$(find $WORKING_DIR -type f -name "*.jpg" -o -name "*.JPG" -o -name "*.jpeg" -o -name "*.JPEG" -o -name "*.png" -o -name "*.PNG")
 #if no argument is supplied show help and exit
 if [ -z "$1" ]; then
     echo "";
@@ -12,6 +11,20 @@ if [ -z "$1" ]; then
     echo "    portraitize ."
     exit 1
 fi
+
+#Check if there are any pictures in the working directory
+if [ -z "$(find $WORKING_DIR -type f -name "*.jpg" -o -name "*.JPG" -o -name "*.jpeg" -o -name "*.JPEG" -o -name "*.png" -o -name "*.PNG")" ]; then
+	echo "  Error: No pictures found in working directory"
+	exit 1
+fi
+
+#Check if working directory writable
+if [ ! -w $WORKING_DIR ]; then
+	echo "  Error: Working directory is not writable"
+	exit 1
+fi
+
+PICTURES=$(find $WORKING_DIR -type f -name "*.jpg" -o -name "*.JPG" -o -name "*.jpeg" -o -name "*.JPEG" -o -name "*.png" -o -name "*.PNG")
 #Iterate through all the pictures in the current directory
 for file in $PICTURES
 do
